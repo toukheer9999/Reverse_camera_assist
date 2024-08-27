@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}",
+                "/home/toukheer/C++_coding/reverse_assist/back_camera_assist",
+                "/usr/include/opencv2",
+                "/home/toukheer/c++_libraries/matplotlib-cpp",
+                "/home/toukheer/c++_libraries/Python-3.6.15/Include",
+                "/home/toukheer/c++_libraries/Python-3.6.15/Lib",
+                "/home/toukheer/.local/lib/python3.6/site-packages/numpy/core/include",
+                "/usr/include/python2.7"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "linux-clang-x64"
+        }
+    ],
+    "version": 4
+}

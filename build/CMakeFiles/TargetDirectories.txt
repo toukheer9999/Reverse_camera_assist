@@ -1,0 +1,5 @@
+/home/toukheer/C++_coding/reverse_assist/build/CMakeFiles/rebuild_cache.dir
+/home/toukheer/C++_coding/reverse_assist/build/CMakeFiles/edit_cache.dir
+/home/toukheer/C++_coding/reverse_assist/build/back_camera_assist/CMakeFiles/rebuild_cache.dir
+/home/toukheer/C++_coding/reverse_assist/build/back_camera_assist/CMakeFiles/edit_cache.dir
+/home/toukheer/C++_coding/reverse_assist/build/back_camera_assist/CMakeFiles/back_camera_assist.dir
