@@ -77,7 +77,7 @@ chmod +x main.sh
    
 Run the compiled program:
 ```bash
-./main <video_file_path>
+./main.sh <video_file_path>
 ```
 Replace <video_file_path> with the path to your video file.
 
@@ -92,6 +92,6 @@ Replace <video_file_path> with the path to your video file.
     
 ## Result
 
-[Watch the Demo Video](videos/result.mp4)
+![Result](./videos/result.gif)
 
 
