@@ -9,46 +9,6 @@
 #include <thread>
 #include <Python.h>
 
-void yolov8_object(cv::Mat frame){
-    //Initalize Python Interpreter
-    Py_Initialize();
-
-    //Import python script
-    PyObject* pModule = PyImport_ImportModule("yolov8");
-
-    //Get Reference to the function in your python script
-    PyObject* pFunction = PyObject_GetAttrString(pModule, "object_detection");
-    //Check if function exist
-    /*if(pFunction && PyCallable_Check(pFunction)){
-        //Convert OpenCV Mat to Python NumPy array
-        PyObject* pImage = PyCapsule_New((void*)&frame,"cv::Mat", NULL);
-
-        //Call the python function with the frame as argument
-        PyObject* pResult = PyObject_CallFunction(pFunction, "0", pImage);
-
-        // Check if the call was successful
-        if(pResult != NULL){
-            std::cout<<pResult<<std::endl;
-        }
-        else{
-            PyErr_Print();
-        }
-
-
-    }
-    //FILE* fp = fopen("/home/toukheer/C++_coding/reverse_assist/back_camera_assist/yolov8.py","r");
-    //std::cout<<fp<<std::endl;
-    //if(fp){
-     //   PyRun_SimpleFile(fp,"/home/toukheer/C++_coding/reverse_assist/back_camera_assist/yolov8.py");
-     //   fclose(fp);
-    //}  */
-
-    // Decrement reference counts
-    Py_XDECREF(pFunction);
-    Py_XDECREF(pModule);
-    // Finalize Python interpreter
-    Py_Finalize();
-}
 
 
 void video_play(double W,double L,double& delta,const std::string file_name){
@@ -67,17 +27,6 @@ void video_play(double W,double L,double& delta,const std::string file_name){
             Trajectory trajectory(W,L,delta); // constructor
             trajectory.ackermann(frame); //  Ackermann function
 
-            //Initalize Python Interpreter
-            Py_Initialize();
-
-            //Import python script
-            PyObject* pModule = PyImport_ImportModule("yolov8");
-
-            //Get Reference to the function in your python script
-            //PyObject* pFunction = PyObject_GetAttrString(pModule, "object_detection");
-            //yolov8_object(frame);
-            //std::thread yolov8_thread(yolov8_object,frame);
-            //yolov8_thread.join();
             if(cv::waitKey(1)=='q'){
                 break;
             }

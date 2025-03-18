@@ -1,4 +1,4 @@
-# Install script for directory: /home/toukheer/C++_coding/reverse_assist/back_camera_assist
+# Install script for directory: /home/toukheer/projects/Reverse_camera_assist/back_camera_assist
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -9,15 +9,19 @@
 #include <thread>
 #include<Python.h>
 
+int main(int argc, char* argv[]){
+    if(argc < 2) {
+    	std::cerr << "Usage: " << argv[0] << " <video_file_path>" << std::endl;
+    	return 1;
+    }		
 
-int main(){
     //Parameters of the car
     double W = 1.8; // track width in meters
     double L = 4.6; // wheelbase in meters
     double delta; // steering angle
 
     //Video and key threading
-    std::string file_name = "/home/toukheer/C++_coding/reverse_assist/back_camera_assist/reversing.mp4";
+    std::string file_name = argv[1];
     std::thread videoThread(video_play,W,L,std::ref(delta),file_name);
     std::thread keythread(key_input,std::ref(delta));
     
