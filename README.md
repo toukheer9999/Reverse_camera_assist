@@ -1,56 +1,99 @@
-# Reverse Camera Assist
+# Reverse Camera Assist Project
 
-## Overview
-This project implements a **Reverse Camera Assist** system using C++. The system helps enhance rear-view assistance by processing camera data and providing relevant feedback. The project consists of multiple components, including a shell script for setup and C++ source files for core functionality.
+## Introduction
+This project is a reverse camera assist system where dynamic guide lines are projected onto a video feed. The lines adjust according to the steering wheel movement, simulating how the vehicle's trajectory would change based on the steering angle. The project is implemented using C++ with OpenCV for video processing and visualization, and it includes keyboard input for controlling the steering angle.
 
 ## Features
-- Real-time processing of camera input
-- Dynamic calculations to assist with reversing
-- Efficient and modular C++ implementation
-- Easy-to-run shell script for execution
 
-## Installation
-### Prerequisites
-Ensure you have the following installed on your system:
-- **g++** (C++ Compiler)
-- **OpenCV** (`opencv_core`, `opencv_imgproc`, `opencv_videoio`)
-- **Python 3.10 Development Libraries** (`python3.10`)
-- **Ncurses** (`lncurses`)
-- **Pthread** (`-pthread`)
-- **Torch (PyTorch)** (Ensure `$TORCH_INCLUDE` and `$TORCH_LIB` are set correctly)
-- **Dynamic Linking Libraries** (`-ldl`, `-lutil`)
-- **Bash** (for script execution)
+    Dynamic Guide Lines: The system projects guide lines onto the video feed that change dynamically based on the steering angle.
 
-### Compilation & Execution
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/reverse-camera-assist.git
-   cd reverse-camera-assist
-   ```
-2. Compile the C++ files:
-   ```sh
-   g++ -o reverse_assist main.cpp dynamics.cpp -std=c++11
-   ```
-3. Run the program using the shell script:
-   ```sh
-   ./main.sh
-   ```
+    Keyboard Control: The steering angle can be controlled using the keyboard arrow keys:
 
-## File Structure
-- **`main.sh`** - Shell script for executing the program
-- **`dynamics.cpp`** - Implements core dynamic calculations for reverse assistance
-- **`main.cpp`** - Main program that integrates all components
+        Right Arrow: Increases the steering angle (turns right).
+
+        Left Arrow: Decreases the steering angle (turns left).
+
+        ESC Key: Exits the keyboard input mode.
+
+    Real-Time Visualization: The video feed is displayed in real-time with the projected guide lines overlayed.
+
+    Ackermann Steering Geometry: The guide lines are calculated using Ackermann steering geometry, which ensures realistic turning behavior.
+
+## System Requirements
+
+To run this project, you need the following software and libraries installed on your system:
+
+- C++ Compiler: A C++ compiler that supports C++11 (e.g., g++).
+
+- OpenCV: OpenCV library for video processing and visualization (version 4.x recommended).
+
+- Eigen: Eigen library for linear algebra operations.
+
+- Python: Python 3.x for plotting (optional, if you want to visualize trajectories using matplotlibcpp).
+
+- ncurses: ncurses library for keyboard input handling.
+
+## Installation Instructions
+
+    Install OpenCV:
+    ```bash	
+    sudo apt-get install libopencv-dev
+    ```
+
+    Install Eigen:
+    ```bash
+    sudo apt-get install libeigen3-dev
+    ```
+
+    Install ncurses:
+    ```bash
+    sudo apt-get install libncurses5-dev
+    ```
+    
+    Install Python and matplotlib (optional):
+    ```bash
+    sudo apt-get install python3 python3-matplotlib
+    ```
+    
+## Building the Project
+
+    Clone the repository:
+    ```bash
+    https://github.com/toukheer9999/Reverse_camera_assist.git
+    cd reverse-camera-assist
+    ```
+    
+    Build the project:
+    ```bash
+    mkdir build
+    cd build
+    cmake ..
+    cd ..
+    ```
+    
+    Compile the project using the provided main.sh script:
+    ```bash
+    chmod +x main.sh
+    ```
+   
+    Run the compiled program:
+    ```bash
+    ./main <video_file_path>
+    ```
+    
+    Replace <video_file_path> with the path to your video file.
+
 
 ## Usage
-Once executed, the system will process input from the reverse camera and provide assistance accordingly. Modify the source code as needed to adapt it for specific hardware integrations.
 
-## Contributing
-Feel free to contribute by submitting issues or pull requests. Ensure code is well-documented and tested before making a submission.
+    Use the Left Arrow and Right Arrow keys to adjust the steering angle.
 
-## License
-This project is licensed under the MIT License.
+    Press the ESC key to exit the program.
 
----
-Author: **Toukheer Shaik**
+    The guide lines will update in real-time based on the steering angle, showing the projected trajectory of the vehicle.
+    
+## Result
+ 
+[Watch the Demo Video](./videos/result.mp4)
 
 
